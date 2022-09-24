@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <title>Gesture Interactions - A-Frame & AR.js</title>
+    <title>AR Geomnetry</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="styles.css">
@@ -40,34 +40,39 @@
         class="clickable"
         gesture-handler>
 
-      <a-box
-        position="0 0 0"
-        rotation="0 45 0"
-        color="#0ee7b2">
-      </a-box>
-   
-    <a-dodecahedron
-      position="0 0 0" 
-      rotation="0 45 0"
-      color="#e70e3b" 
-      visible="false">
-    </a-dodecahedron>
+        <a-box
+          position="0 0 0"
+          rotation="0 45 0"
+          color="#0ee7b2">
+        </a-box>
+      
+        <a-dodecahedron
+          position="0 0 0" 
+          rotation="0 45 0"
+          color="#e70e3b" 
+          visible="false">
+        </a-dodecahedron>
 
-    <a-cylinder
-      position="0 0 0"
-      radius="0.5"
-      height="1.5"
-      color="#7510b5"
-      visible="false">
-    </a-cylinder>
+        <a-cylinder
+          position="0 0 0"
+          radius="0.5"
+          height="1.5"
+          color="#7510b5"
+          visible="false">
+        </a-cylinder>
 
-    <a-cone
-    position="0 0 0"
-    radius-bottom="1" 
-    color="#dde318"
-    radius-top="0.25"
-    visible="false">
-    </a-cone>
+        <a-cone
+          position="0 0 0"
+          radius-bottom="1" 
+          color="#dde318"
+          radius-top="0.25"
+          visible="false">
+        </a-cone>
+
+        <a-sphere
+          color="yellow" 
+          radius="5">
+        </a-sphere>
 
     </a-entity>
       </a-marker>
@@ -80,6 +85,7 @@
       <button class="dodecahedron">Dodecahedron</button>
       <button class="cylinder">Cylinder</button>
       <button class="cone">Cone</button>
+      <button class="sphere">Sphere</button>
     </div>
 
 
@@ -90,6 +96,7 @@
         var bdodecahedron = document.querySelector("a-dodecahedron");
         var bcylinder = document.querySelector("a-cylinder");
         var bcone = document.querySelector("a-cone");
+        var bsphere = document.querySelector("a-sphere");
     
         document.querySelector(".cube")
           .addEventListener("click", function () {
@@ -97,6 +104,7 @@
             bdodecahedron.setAttribute("visible",false);
             bcylinder.setAttribute("visible",false);
             bcone.setAttribute("visible",false);
+            bsphere.setAttribute("visible",false);
     
           });
     
@@ -107,6 +115,7 @@
             bdodecahedron.setAttribute("visible",true);
             bcylinder.setAttribute("visible",false);
             bcone.setAttribute("visible",false);
+            bsphere.setAttribute("visible",false);
     
           });
 
@@ -116,6 +125,7 @@
             bdodecahedron.setAttribute("visible",false);
             bcylinder.setAttribute("visible",true);
             bcone.setAttribute("visible",false);
+            bsphere.setAttribute("visible",false);
     
           });
 
@@ -125,6 +135,17 @@
             bdodecahedron.setAttribute("visible",false);
             bcylinder.setAttribute("visible",false);
             bcone.setAttribute("visible",true);
+            bsphere.setAttribute("visible",false);
+    
+          });
+
+          document.querySelector(".sphere")
+          .addEventListener("click", function () {
+            bcube.setAttribute("visible",false);
+            bdodecahedron.setAttribute("visible",false);
+            bcylinder.setAttribute("visible",false);
+            bcone.setAttribute("visible",false);
+            bsphere.setAttribute("visible",true);
     
           });
       };
