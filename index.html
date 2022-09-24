@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Gesture Interactions - A-Frame & AR.js</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="gesture-detector.js"></script>
+    <script src="gesture-handler.js"></script>
+    </head>
+
+  <body>
+
+    <a-scene
+      style="height: 70%"
+      arjs
+      embedded
+      renderer="logarithmicDepthBuffer: true;"
+      vr-mode-ui="enabled: false"
+      gesture-detector
+      id="scene"
+    >
+      <a-assets>
+      </a-assets>
+
+      <a-marker
+        preset="hiro"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerA"
+      >
+      <a-entity
+        position="0 0 0"
+        scale="1 1 1"
+        class="clickable"
+        gesture-handler>
+
+      <a-box
+        position="0 0 0"
+        rotation="0 45 0"
+        color="#0ee7b2">
+      </a-box>
+   
+    <a-dodecahedron
+      position="0 0 0" 
+      rotation="0 45 0"
+      color="#e70e3b" 
+      visible="false">
+    </a-dodecahedron>
+
+    <a-cylinder
+      position="0 0 0"
+      radius="0.5"
+      height="1.5"
+      color="#7510b5"
+      visible="false">
+    </a-cylinder>
+
+    <a-cone
+    position="0 0 0"
+    radius-bottom="1" 
+    color="#dde318"
+    radius-top="0.25"
+    visible="false">
+    </a-cone>
+
+    </a-entity>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+
+
+    <div class="butttons">
+      <button class="cube">Cube</button>
+      <button class="dodecahedron">Dodecahedron</button>
+      <button class="cylinder">Cylinder</button>
+      <button class="cone">Cone</button>
+    </div>
+
+
+
+    <script>
+      window.onload = function () {
+        var bcube = document.querySelector("a-box");
+        var bdodecahedron = document.querySelector("a-dodecahedron");
+        var bcylinder = document.querySelector("a-cylinder");
+        var bcone = document.querySelector("a-cone");
+    
+        document.querySelector(".cube")
+          .addEventListener("click", function () {
+            bcube.setAttribute("visible",true);
+            bdodecahedron.setAttribute("visible",false);
+            bcylinder.setAttribute("visible",false);
+            bcone.setAttribute("visible",false);
+    
+          });
+    
+
+          document.querySelector(".dodecahedron")
+          .addEventListener("click", function () {
+            bcube.setAttribute("visible",false);
+            bdodecahedron.setAttribute("visible",true);
+            bcylinder.setAttribute("visible",false);
+            bcone.setAttribute("visible",false);
+    
+          });
+
+          document.querySelector(".cylinder")
+          .addEventListener("click", function () {
+            bcube.setAttribute("visible",false);
+            bdodecahedron.setAttribute("visible",false);
+            bcylinder.setAttribute("visible",true);
+            bcone.setAttribute("visible",false);
+    
+          });
+
+          document.querySelector(".cone")
+          .addEventListener("click", function () {
+            bcube.setAttribute("visible",false);
+            bdodecahedron.setAttribute("visible",false);
+            bcylinder.setAttribute("visible",false);
+            bcone.setAttribute("visible",true);
+    
+          });
+      };
+    </script>
+  </body>
+</html>

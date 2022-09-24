@@ -1,0 +1,44 @@
+body {
+  margin: 0px;
+  overflow: visible;
+}
+
+.buttons {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+}
+.cube{
+  background:#0ee7b2;
+  color: black;
+  border: none;
+  z-index: 10;
+  font-size: 1em;
+  font-weight: 900;  
+  padding: 10px;
+  margin-left: 35%;
+
+}
+
+.cylinder,.cone,.dodecahedron{
+  border: none;
+  font-size: 1em;
+  font-weight: 900;  
+  padding: 10px;
+
+}
+.cylinder{
+  background: #7510b5;
+  color: white;
+}
+.cone{
+  background:#dde318;
+  color: black;
+}
+.dodecahedron{
+  background: #e70e3b;
+  color: white;
+}
