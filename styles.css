@@ -23,7 +23,7 @@ body {
 
 }
 
-.cylinder,.cone,.dodecahedron,.sphere{
+.cylinder,.cone,.tetrahedron,.sphere{
   border: none;
   font-size: 1em;
   font-weight: 900;  
@@ -42,7 +42,7 @@ body {
   background:#dde318;
   color: black;
 }
-.dodecahedron{
+.tetrahedron{
   background: #e70e3b;
   color: white;
 }

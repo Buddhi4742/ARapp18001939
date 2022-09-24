@@ -46,12 +46,13 @@
           color="#0ee7b2">
         </a-box>
       
-        <a-dodecahedron
+        <a-tetrahedron
           position="0 0 0" 
           rotation="0 45 0"
+          radius="1"
           color="#e70e3b" 
           visible="false">
-        </a-dodecahedron>
+        </a-tetrahedron>
 
         <a-cylinder
           position="0 0 0"
@@ -73,7 +74,7 @@
         <a-sphere
           position="0 0 0"
           color="#0aff01" 
-          radius="1"
+          radius="0.75"
           visible="false">
         </a-sphere>
 
@@ -86,7 +87,7 @@
     <div class="butttons">
       <button class="cube">Cube</button>
       <button class="sphere">Sphere</button>
-      <button class="dodecahedron">Dodecahedron</button>
+      <button class="tetrahedron">Dodecahedron</button>
       <button class="cone">Cone</button>
       <button class="cylinder">Cylinder</button>
     </div>
@@ -96,7 +97,7 @@
     <script>
       window.onload = function () {
         var bcube = document.querySelector("a-box");
-        var bdodecahedron = document.querySelector("a-dodecahedron");
+        var btetrahedron = document.querySelector("a-tetrahedron");
         var bcylinder = document.querySelector("a-cylinder");
         var bcone = document.querySelector("a-cone");
         var bsphere = document.querySelector("a-sphere");
@@ -104,7 +105,7 @@
         document.querySelector(".cube")
           .addEventListener("click", function () {
             bcube.setAttribute("visible",true);
-            bdodecahedron.setAttribute("visible",false);
+            btetrahedron.setAttribute("visible",false);
             bcylinder.setAttribute("visible",false);
             bcone.setAttribute("visible",false);
             bsphere.setAttribute("visible",false);
@@ -112,10 +113,10 @@
           });
     
 
-          document.querySelector(".dodecahedron")
+          document.querySelector(".tetrahedron")
           .addEventListener("click", function () {
             bcube.setAttribute("visible",false);
-            bdodecahedron.setAttribute("visible",true);
+            btetrahedron.setAttribute("visible",true);
             bcylinder.setAttribute("visible",false);
             bcone.setAttribute("visible",false);
             bsphere.setAttribute("visible",false);
@@ -125,7 +126,7 @@
           document.querySelector(".cylinder")
           .addEventListener("click", function () {
             bcube.setAttribute("visible",false);
-            bdodecahedron.setAttribute("visible",false);
+            btetrahedron.setAttribute("visible",false);
             bcylinder.setAttribute("visible",true);
             bcone.setAttribute("visible",false);
             bsphere.setAttribute("visible",false);
@@ -135,7 +136,7 @@
           document.querySelector(".cone")
           .addEventListener("click", function () {
             bcube.setAttribute("visible",false);
-            bdodecahedron.setAttribute("visible",false);
+            btetrahedron.setAttribute("visible",false);
             bcylinder.setAttribute("visible",false);
             bcone.setAttribute("visible",true);
             bsphere.setAttribute("visible",false);
@@ -145,7 +146,7 @@
           document.querySelector(".sphere")
           .addEventListener("click", function () {
             bcube.setAttribute("visible",false);
-            bdodecahedron.setAttribute("visible",false);
+            btetrahedron.setAttribute("visible",false);
             bcylinder.setAttribute("visible",false);
             bcone.setAttribute("visible",false);
             bsphere.setAttribute("visible",true);
