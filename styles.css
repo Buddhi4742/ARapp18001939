@@ -4,12 +4,10 @@ body {
 }
 
 .buttons {
-  position: absolute;
   z-index: 10;
   display: flex;
   justify-content: center;
   text-align: center;
-
 }
 /* .cube{
   background:#0ee7b2;
