@@ -30,6 +30,10 @@ body {
   padding: 10px;
 
 }
+.sphere{
+  background: #ff00ea;
+  color: white;
+}
 .cylinder{
   background: #7510b5;
   color: white;
